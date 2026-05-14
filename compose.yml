@@ -1,0 +1,13 @@
+services:
+  nginx:
+    image: nginx:latest
+    volumes:
+      - ./conf.d:/etc/nginx/conf.d
+    ports:
+      - "80:80"
+    networks:
+      - proxy-network
+
+networks:
+  proxy-network:
+    external: true
